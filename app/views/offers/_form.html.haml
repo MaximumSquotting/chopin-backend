@@ -18,5 +18,8 @@
   .field
     = f.label :max_number_of_people
     = f.number_field :max_number_of_people
+  .field
+    = f.label :user
+    = f.collection_select(:user_id, User.all, :id, :name)
   .actions
     = f.submit 'Save'

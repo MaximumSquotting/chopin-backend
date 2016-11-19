@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :offer do
-    name "MyString"
-    description "MyString"
-    cost_per_person 1
-    max_number_of_people 1
-    user nil
+    sequence(:name) { |n| "Obiad ##{n}" }
+    description "Opis obiadu"
+    cost_per_person 10
+    max_number_of_people 4
+    association :user
   end
 end

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = payment.user
+%p
+  %b Offer:
+  = payment.offer
+%p
+  %b Amount:
+  = payment.amount
+%p
+  %b Status:
+  = payment.status
+
+= link_to 'Edit', edit_payment_path(payment)
+\|
+= link_to 'Back', payments_path

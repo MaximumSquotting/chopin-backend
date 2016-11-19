@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
-  expose :offers, ->{ Offer.all }
+  expose :offers, ->{ Offer.includes(:user).all }
   expose :offer, find: ->(id, scope){ scope.includes(:user).find(id) }
 
   # GET /offers
