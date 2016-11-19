@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-# Make sure that jobs are being pushed into jobs array instead of Redis when testing
-require "sidekiq/testing"
-Sidekiq::Testing.fake!
-
 Dir["./spec/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
