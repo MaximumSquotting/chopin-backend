@@ -1,4 +1,5 @@
-require_relative 'boot'
+# frozen_string_literal: true
+require_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
@@ -18,8 +19,11 @@ Bundler.require(*Rails.groups)
 
 module Chopin
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.assets.enabled = false
+    config.generators do |g|
+      g.test_framework :rspec, fixture: true
+      g.view_specs false
+      g.helper_specs false
+    end
   end
 end
