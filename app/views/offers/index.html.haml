@@ -1,0 +1,29 @@
+%h1 Listing offers
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Cost per person
+      %th Max number of people
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - offers.each do |offer|
+      %tr
+        %td= offer.name
+        %td= offer.description
+        %td= offer.cost_per_person
+        %td= offer.max_number_of_people
+        %td= offer.user
+        %td= link_to 'Show', offer
+        %td= link_to 'Edit', edit_offer_path(offer)
+        %td= link_to 'Destroy', offer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Offer', new_offer_path

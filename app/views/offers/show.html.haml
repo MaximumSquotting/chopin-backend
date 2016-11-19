@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = offer.name
+%p
+  %b Description:
+  = offer.description
+%p
+  %b Cost per person:
+  = offer.cost_per_person
+%p
+  %b Max number of people:
+  = offer.max_number_of_people
+%p
+  %b User:
+  = offer.user
+
+= link_to 'Edit', edit_offer_path(offer)
+\|
+= link_to 'Back', offers_path

@@ -1,0 +1,22 @@
+= form_for offer do |f|
+  - if offer.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(offer.errors.count, "error")} prohibited this offer from being saved:"
+      %ul
+        - offer.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :cost_per_person
+    = f.number_field :cost_per_person
+  .field
+    = f.label :max_number_of_people
+    = f.number_field :max_number_of_people
+  .actions
+    = f.submit 'Save'
