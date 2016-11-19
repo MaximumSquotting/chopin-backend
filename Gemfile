@@ -12,6 +12,7 @@ gem "jbuilder"
 gem "jquery-rails"
 gem "uglifier"
 gem "therubyracer"
+gem "devise"
 
 group :development do
   gem "web-console", "~> 2.0"
