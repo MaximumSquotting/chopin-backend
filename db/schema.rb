@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 20161119123718) do
   enable_extension "plpgsql"
 
   create_table "offers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
+    t.string   "name",                 default: "", null: false
+    t.string   "description",          default: "", null: false
     t.integer  "cost_per_person"
     t.integer  "max_number_of_people"
     t.integer  "user_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.index ["user_id"], name: "index_offers_on_user_id", using: :btree
   end
 
