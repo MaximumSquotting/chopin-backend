@@ -68,4 +68,8 @@ Rails.application.configure do
     Bullet.add_footer = true
     Bullet.unused_eager_loading_enable = false
   end
+
+  DeviseTokenAuth.setup do |config|
+    config.change_headers_on_each_request = false
+  end
 end

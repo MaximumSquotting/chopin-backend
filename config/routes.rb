@@ -3,4 +3,12 @@ Rails.application.routes.draw do
   resources :payments
   resources :offers
   devise_for :users
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      mount_devise_token_auth_for "User", at: "auth", skip: [:omniauth_callbacks]
+      resources :payments, only: [:index, :show, :create]
+      resources :offers, only: [:index, :show, :create, :update, :destroy]
+    end
+  end
 end

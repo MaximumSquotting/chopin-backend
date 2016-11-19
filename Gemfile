@@ -13,6 +13,7 @@ gem "jquery-rails"
 gem "uglifier"
 gem "therubyracer"
 gem "devise"
+gem "devise_token_auth"
 
 group :development do
   gem "web-console", "~> 2.0"
