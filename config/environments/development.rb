@@ -61,7 +61,7 @@ Rails.application.configure do
 
   # Enable Bullet
   config.after_initialize do
-    Bullet.enable = true
+    Bullet.enable = false
     Bullet.alert = true
     Bullet.rails_logger = true
     Bullet.raise = true
