@@ -7,6 +7,13 @@ module Api::V1
     end
 
     def create
+
+    end
+
+    private
+
+    def payment_params
+      params.require(:payment).permit(:user_id, :offer_id, :amount)
     end
   end
 end

@@ -17,7 +17,6 @@ class PaymentsController < ApplicationController
   end
 
   def create
-
     respond_to do |format|
       if payment.save
         format.html { redirect_to payment, notice: 'Payment was successfully created.' }
