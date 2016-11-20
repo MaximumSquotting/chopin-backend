@@ -3,6 +3,7 @@ module Api::V1
     before_action :authenticate_user!, only: [:create, :update, :destroy, :chipped_in]
     expose(:offers) { Offer.all }
     expose(:offer)
+    expose(:my_offers) { current_user.offers }
     expose(:participated) { current_user.dinners.includes(:payments) }
 
     def index
@@ -26,6 +27,9 @@ module Api::V1
     def destroy
       offer.destroy
       head :no_content
+    end
+
+    def my
     end
 
     def chipped_in
