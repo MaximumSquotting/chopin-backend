@@ -38,7 +38,7 @@ module Api::V1
     private
 
     def offer_params
-      params.require(:offer).permit(:name, :description, :cost_per_person, :max_number_of_people, :address, :latitude, :longitude)
+      params.require(:offer).permit(:name, :description, :cost_per_person, :max_number_of_people, :address, :latitude, :longitude, :OfferDate)
     end
   end
 end
