@@ -22,6 +22,10 @@ module Api::V1
     end
 
     def update
+      @offer = Offer.find(params[:id])
+      if @offer.update(offer_params)
+        render json: {status: :updated}
+      end
     end
 
     def destroy
