@@ -1,7 +1,7 @@
 module Api::V1
   class OffersController < ApiController
     before_action :authenticate_user!, only: [:create, :update, :destroy, :chipped_in]
-    expose(:offers) { Offer.all }
+    expose(:offers) { Offer.currently_available }
     expose(:offer)
     expose(:my_offers) { current_user.offers }
     expose(:participated) { current_user.dinners.includes(:payments) }
@@ -42,7 +42,7 @@ module Api::V1
     private
 
     def offer_params
-      params.require(:offer).permit(:name, :description, :cost_per_person, :max_number_of_people, :address, :latitude, :longitude, :OfferDate)
+      params.require(:offer).permit(:name, :description, :cost_per_person, :max_number_of_people, :address, :latitude, :longitude, :offer_date)
     end
   end
 end

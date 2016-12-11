@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204013814) do
+ActiveRecord::Schema.define(version: 20161211190506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20161204013814) do
     t.string   "address",                                       default: "", null: false
     t.decimal  "latitude",             precision: 10, scale: 6
     t.decimal  "longitude",            precision: 10, scale: 6
-    t.datetime "OfferDate"
+    t.datetime "offer_date"
     t.index ["user_id"], name: "index_offers_on_user_id", using: :btree
   end
 
