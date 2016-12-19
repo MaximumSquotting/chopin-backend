@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       get "/offers/my", to: "offers#my"
       get "/offers/chipped_in", to: "offers#chipped_in"
       resources :offers, only: [:index, :show, :create, :update, :destroy]
-
     end
   end
 end
